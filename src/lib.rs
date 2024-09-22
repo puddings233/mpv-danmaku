@@ -81,7 +81,7 @@ fn create_temp_file(filename: &str) -> Option<(TempDir, File)> {
 
 fn get_danmaku_ass(path: &str) -> Option<Vec<u8>> {
     let output = Command::new("danmu2ass")
-        .args(["--no-web", "-o", "-", path])
+        .args(["--no-web", "-f sans-serif", "-o", "-", path])
         .output();
 
     match output {
